@@ -15,86 +15,6 @@ Below are 10 of them:
  8 key:       Boston_terrier_02285.jpg  label:             boston terrier
  9 key:       Boston_terrier_02303.jpg  label:             boston terrier
 10 key:                Boxer_02426.jpg  label:                      boxer
-basenji
-pet_images/Basenji_00963.jpg
-basenji
-pet_images/Basenji_00974.jpg
-basset hound
-pet_images/Basset_hound_01034.jpg
-beagle
-pet_images/Beagle_01125.jpg
-beagle
-pet_images/Beagle_01141.jpg
-beagle
-pet_images/Beagle_01170.jpg
-boston terrier
-pet_images/Boston_terrier_02259.jpg
-boston terrier
-pet_images/Boston_terrier_02285.jpg
-boston terrier
-pet_images/Boston_terrier_02303.jpg
-boxer
-pet_images/Boxer_02426.jpg
-cat
-pet_images/cat_01.jpg
-cat
-pet_images/cat_02.jpg
-cat
-pet_images/cat_07.jpg
-cocker spaniel
-pet_images/Cocker_spaniel_03750.jpg
-collie
-pet_images/Collie_03797.jpg
-dalmatian
-pet_images/Dalmatian_04017.jpg
-dalmatian
-pet_images/Dalmatian_04037.jpg
-dalmatian
-pet_images/Dalmatian_04068.jpg
-fox squirrel
-pet_images/fox_squirrel_01.jpg
-gecko
-pet_images/gecko_02.jpg
-gecko
-pet_images/gecko_80.jpg
-german shepherd dog
-pet_images/German_shepherd_dog_04890.jpg
-german shepherd dog
-pet_images/German_shepherd_dog_04931.jpg
-german shorthaired pointer
-pet_images/German_shorthaired_pointer_04986.jpg
-golden retriever
-pet_images/Golden_retriever_05182.jpg
-golden retriever
-pet_images/Golden_retriever_05195.jpg
-golden retriever
-pet_images/Golden_retriever_05223.jpg
-golden retriever
-pet_images/Golden_retriever_05257.jpg
-great dane
-pet_images/Great_dane_05320.jpg
-great horned owl
-pet_images/great_horned_owl_02.jpg
-great pyrenees
-pet_images/Great_pyrenees_05367.jpg
-great pyrenees
-pet_images/Great_pyrenees_05435.jpg
-miniature schnauzer
-pet_images/Miniature_schnauzer_06884.jpg
-polar bear
-pet_images/polar_bear_04.jpg
-poodle
-pet_images/Poodle_07927.jpg
-poodle
-pet_images/Poodle_07956.jpg
-rabbit
-pet_images/Rabbit_002.jpg
-saint bernard
-pet_images/Saint_bernard_08010.jpg
-saint bernard
-pet_images/Saint_bernard_08036.jpg
-skunk
-pet_images/skunk_029.jpg
 
      MATCH:
 
@@ -387,9 +307,6 @@ Real:             great pyrenees   Classifier:                         kuvasz
 PetLabelDog: 1  ClassLabelDog: 1
 
 # Total Images 40 # Matches: 33 # NOT Matches: 7
-90.0
-9
-10
 
  ** Statistics from calculates_results_stats() function:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
@@ -409,6 +326,7 @@ Not Dog images count: 10
 pct_correct_dogs percentage: 100.0
 pct_correct_breed percentage: 90.0
 pct_correct_notdogs percentage: 90.0
+pct_match_labels percentage: 82.5
 
 ***INCORRECT DOGS***
 Pet label was: "cat" However, the classifier label was: "norwegian elkhound, elkhound"
