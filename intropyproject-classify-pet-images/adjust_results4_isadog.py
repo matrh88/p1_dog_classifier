@@ -66,5 +66,40 @@ def adjust_results4_isadog(results_dic, dogfile):
                maltese) (string - indicates text file's filename)
     Returns:
            None - results_dic is mutable data type so no return needed.
-    """           
+    """
+    #defines an emty "isdog" dictionary
+    dognames = dict()
+
+    #Opens file and iterates through each line of the file
+    with open(dogfile) as dognamefile:
+      for line in dognamefile:
+        #adds the line as the key in a dictionary while stripping the \n from the end. Adds [1] as the value
+        dognames[line.rstrip()] = [1]
+
+    #iterates through each key in results_dic
+    for value in results_dic:
+      #checks if the image label is in the new dictionary created
+      if results_dic[value][0] in dognames:
+        #sets PetLabelDog to 1 if it does exist in the dictionary
+        results_dic[value].extend([1])
+        #checks if the classifier label is in the new dictionary
+        if results_dic[value][1] in dognames:
+          #sets ClassLabelDog to 1 if it does exist in the dictionary
+          results_dic[value].extend([1])
+        else:
+          results_dic[value].extend([0])
+      else:
+        #if image label does not exist in the new dictionary, PetLabelDog gets set to 0
+        results_dic[value].extend([0])
+        if results_dic[value][1] in dognames:
+          results_dic[value].extend([1])
+        else:
+          results_dic[value].extend([0])
+
+    
+        
+
+
+    #
+
     None

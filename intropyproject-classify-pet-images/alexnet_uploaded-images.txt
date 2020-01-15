@@ -1,0 +1,88 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                     Dog_01.jpg  label:                        dog
+ 2 key:                     Dog_02.jpg  label:                        dog
+ 3 key:               Door_knob_01.jpg  label:                  door knob
+ 4 key:                  monkey_01.jpg  label:                     monkey
+dog
+uploaded_images/Dog_01.jpg
+dog
+uploaded_images/Dog_02.jpg
+door knob
+uploaded_images/Door_knob_01.jpg
+monkey
+uploaded_images/monkey_01.jpg
+
+     MATCH:
+
+                 monkey_01.jpg: 
+Real:                     monkey   Classifier:          guenon, guenon monkey
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:                     pomeranian
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                     pomeranian
+
+              Door_knob_01.jpg: 
+Real:                  door knob   Classifier:                spotlight, spot
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+                 monkey_01.jpg: 
+Real:                     monkey   Classifier:          guenon, guenon monkey  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:                     pomeranian  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                     pomeranian  
+PetLabelDog: 1  ClassLabelDog: 1
+
+              Door_knob_01.jpg: 
+Real:                  door knob   Classifier:                spotlight, spot  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+100.0
+2
+2
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+***THE RESULTS ARE IN***
+Image count: 4.
+Dog images count: 2
+Not Dog images count: 2
+
+
+pct_correct_dogs percentage: 100.0
+pct_correct_breed percentage: 0.0
+pct_correct_notdogs percentage: 100.0
+
+***INCORRECT BREEDS***
+
+Miss-labled breed is: "pomeranian" But should have been: "dog"
+Miss-labled breed is: "pomeranian" But should have been: "dog"
+
+** Total Elapsed Runtime: 0:0:0

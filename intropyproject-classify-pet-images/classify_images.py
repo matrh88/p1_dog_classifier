@@ -65,4 +65,34 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
+
+    
+    for key, value in results_dic.items():
+      #print(results_dic[key][0])
+
+      #To consolidate the defined path argument and the key filename
+      newpath = images_dir + key
+      #print(newpath)
+
+      #returns the classified label from the function and makes the caracters lower case
+      classifier_label = classifier(newpath,model).lower()
+      
+      #Checks if the Image label is in the classified label, adds the classified label to the list and adds either 1 or 0 
+      #depending on if they match or not
+      if value[0] in classifier_label:
+        results_dic[key].extend([classifier_label, 1])
+      else:
+        results_dic[key].extend([classifier_label, 0])
+
+    
+    
+
+      
+
+
+    
+
+
+      
+    #
     None 

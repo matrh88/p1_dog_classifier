@@ -70,4 +70,92 @@ def calculates_results_stats(results_dic):
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
     # this function 
-    return None
+
+    results_stats_dic = dict()
+
+    #takes the length of the dictionary and assigns the value to n_images
+    results_stats_dic['n_images'] = len(results_dic)
+    
+    #Initiates the variables with 0 and adds 1 if the function matches
+    results_stats_dic['n_dogs_img'] = 0
+    results_stats_dic['n_notdogs_img'] = 0
+    results_stats_dic['n_match'] = 0
+    results_stats_dic['n_correct_dogs'] = 0
+    results_stats_dic['n_correct_notdogs'] = 0
+    results_stats_dic['n_correct_breed'] = 0
+    
+
+
+    for dogs in results_dic:
+
+        #Checks wether or not the two labels match
+        #if the labels match
+        if results_dic[dogs][2] == 1:
+            results_stats_dic['n_match'] += 1
+            
+            #Checks if the filename label is a dog
+            if results_dic[dogs][3] == 1:
+                results_stats_dic['n_dogs_img'] += 1
+
+                #Checks if the classifier has classified the image as a dog
+                if results_dic[dogs][4] == 1:
+                    results_stats_dic['n_correct_dogs'] += 1
+                    results_stats_dic['n_correct_breed'] += 1
+
+            #If image label is not a dog    
+            else:
+                results_stats_dic['n_notdogs_img'] += 1
+
+                #adds a notdog if the classifier said it is not a dog and the image label is not a dog
+                if results_dic[dogs][4] == 0:
+                    results_stats_dic['n_correct_notdogs'] += 1
+
+        #If the labels dont match
+        else:
+
+            #Checks if the image label is a dog
+            if results_dic[dogs][3] == 1:
+                results_stats_dic['n_dogs_img'] += 1
+
+                #Checks if the classifier has said it was a dog
+                if results_dic[dogs][4] == 1:
+                    results_stats_dic['n_correct_dogs'] += 1
+
+            #If image label does not say image is a dog
+            else:
+                results_stats_dic['n_notdogs_img'] += 1
+
+                #If classifier also says it is not a dog
+                if results_dic[dogs][4] == 0:
+                    results_stats_dic['n_correct_notdogs'] += 1
+
+
+            
+        
+        
+
+
+
+
+
+    results_stats_dic['pct_correct_dogs'] = (results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img'] * 100)
+
+    results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img'] * 100)
+
+    results_stats_dic['pct_correct_notdogs'] = (results_stats_dic['n_correct_notdogs'] / results_stats_dic['n_notdogs_img'] * 100)
+    
+    results_stats_dic['pct_match_labels'] = (results_stats_dic['n_match'] / results_stats_dic['n_images'] * 100)
+
+
+
+    
+
+    
+    
+
+
+
+
+
+    #
+    return results_stats_dic

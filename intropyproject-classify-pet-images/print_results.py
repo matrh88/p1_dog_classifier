@@ -61,6 +61,44 @@ def print_results(results_dic, results_stats_dic, model,
                               False doesn't print anything(default) (bool) 
     Returns:
            None - simply printing results.
-    """    
+    """
+    
+    print('\n\n***THE RESULTS ARE IN***\nImage count: {}.'.format(results_stats_dic['n_images']))
+    print('Dog images count: {}'.format(results_stats_dic['n_dogs_img']))
+    print('Not Dog images count: {}\n\n'.format(results_stats_dic['n_notdogs_img']))
+
+    #Checks if the key in the stat dictionary starts with a p to indicate that it is a percentage.
+    for stat in results_stats_dic:
+        if stat[0] == 'p':
+                print('{} percentage: {}'.format(stat, round(results_stats_dic[stat], 1)))
+    
+    #Checks if correct dogs and incorrect dogs add up to the total images or not. if it does not, it means that at least one image is labeled/classified incorrectly.
+    if print_incorrect_dogs == True and results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] != results_stats_dic['n_images']:
+        print('\n***INCORRECT DOGS***')
+        for key in results_dic:
+            
+            #Checks wether or not one of the labels indicated a dog
+            if results_dic[key][3] == 0 and results_dic[key][4] == 1:
+                print('Pet label was: "{}" However, the classifier label was: "{}"'.format(results_dic[key][0],results_dic[key][1]))
+            elif results_dic[key][4] == 0 and results_dic[key][3] == 1:
+                print('Pet label was: "{}" However, the classifier label was: "{}"'.format(results_dic[key][0],results_dic[key][1]))
+
+    #compares if correct dogs and correct breeds are the same, if they are not, it means that there are less correct predicted breeds than dogs.
+    if print_incorrect_breed == True and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']:
+        print('\n***INCORRECT BREEDS***\n')
+        for key in results_dic:
+            
+            #Checks if the labels match
+            if results_dic[key][2] == 0:
+                #Checks if both labels are of dogs, if they are, one of them are miss-labled
+                if results_dic[key][3] == 1 and results_dic[key][4] == 1:
+                    print('Miss-labled breed is: "{}" But should have been: "{}"'.format(results_dic[key][1], results_dic[key][0]))
+
+                
+
+
+
+
+    #    
     None
                 
