@@ -20,7 +20,7 @@ This repository contains _REVISED_ code and associated files for the AI Programm
 
 ## Dependencies
 
-Each directory has a `requirements.txt` describing the minimal dependencies required to run the notebooks in that directory.
+Each directory has a `requirements.txt` describing the minimum dependencies required to run the notebooks in that directory.
 
 ### pip
 
